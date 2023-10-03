@@ -294,34 +294,6 @@
                     </execution>
                 </executions>
             </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jarsigner-plugin</artifactId>
-                <version>3.0.0</version>
-                <executions>
-                    <execution>
-                        <phase>${mvn.sign.phrase}</phase>
-                        <id>sign</id>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <archive>${project.basedir}/target/QuickShop.jar</archive>
-                    <keystore>${project.basedir}/keystore.jks</keystore>
-                    <alias>selfsigned</alias>
-                    <arguments>
-                        <argument>-signedjar</argument>
-                        <argument>target/QuickShop-signed.jar</argument>
-                    </arguments>
-                    <!--suppress UnresolvedMavenProperty -->
-                    <storepass>${env.quickshop-signer-pwd}</storepass>
-                    <!--suppress UnresolvedMavenProperty -->
-                    <keypass>${env.quickshop-signer-pwd}</keypass>
-                </configuration>
-            </plugin>
         </plugins>
         <resources>
             <resource>
@@ -627,7 +599,7 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.20.1-R0.1-SNAPSHOT</version>
+            <version>1.20.2-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
